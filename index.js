@@ -213,8 +213,8 @@ Compare.prototype = {
   }
 };
 
-if (window.mapboxgl) {
-  mapboxgl.Compare = Compare;
-} else if (typeof module !== 'undefined') {
+if (typeof window !== 'undefined' && window.mapboxgl) {
+  window.mapboxgl.Compare = Compare;
+} else if (typeof module !== 'undefined' && module.exports) {
   module.exports = Compare;
 }
